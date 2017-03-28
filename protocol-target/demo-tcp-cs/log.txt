@@ -1,0 +1,46 @@
+[0;36mafl-fuzz [1;37m1.95b[0m by <lcamtuf@google.com>
+[1;32m[+] [0mLooks like we're not running on a tty, so I'll be a bit less verbose.[0m
+[1;32m[+] [0mYou have 4 CPU cores and 1 runnable tasks (utilization: 25%).[0m
+[1;32m[+] [0mTry parallel jobs - see /usr/local/share/doc/afl/parallel_fuzzing.txt.[0m
+[1;34m[*] [0mChecking core_pattern...[0m
+[1;34m[*] [0mSetting up output directories...[0m
+[1;32m[+] [0mOutput directory exists but deemed OK to reuse.[0m
+[1;34m[*] [0mDeleting old session data...[0m
+[1;32m[+] [0mOutput dir cleanup successful.[0m
+[1;34m[*] [0mScanning 'afl-input'...[0m
+[1;32m[+] [0mNo auto-generated dictionary tokens to reuse.[0m
+[1;34m[*] [0mCreating hard links for all input files...[0m
+[1;34m[*] [0mValidating target binary...[0m
+[1;34m[*] [0mAttempting dry run with 'id:000000,orig:a'...[0m
+[1;34m[*] [0mSpinning up the fork server...[0m
+[1;32m[+] [0mAll right - fork server is up.[0m
+[1;30m    len = 3, map size = 8, exec speed = 463 us
+[0m[1;34m[*] [0mAttempting dry run with 'id:000001,orig:b.txt'...[0m
+[1;30m    len = 12, map size = 8, exec speed = 457 us
+[0m[1;33m[!] [1;37mWARNING: [0mNo new instrumentation output, test case may be useless.[0m
+[1;32m[+] [0mAll test cases processed.[0m
+
+[1;33m[!] [1;37mWARNING: [0m[1;31mSome test cases look useless. Consider using a smaller set.[0m
+[1;32m[+] [0mHere are some useful stats:
+
+[1;30m    Test case count : [0;37m1 favored, 0 variable, 2 total
+[1;30m       Bitmap range : [0;37m8 to 8 bits (average: 8.00 bits)
+[1;30m        Exec timing : [0;37m457 to 463 us (average: 460 us)
+[0m
+[1;34m[*] [0mNo -t option specified, so I'll use exec timeout of 20 ms.[0m
+[1;32m[+] [0mAll set and ready to roll![0m
+[1;34m[*] [0mEntering queue cycle 1.[0m
+[1;34m[*] [0mFuzzing test case #0 (2 total)...[0m
+[1;34m[*] [0mFuzzing test case #2 (3 total)...[0m
+[1;34m[*] [0mEntering queue cycle 2.[0m
+[1;34m[*] [0mFuzzing test case #0 (3 total)...[0m
+[1;34m[*] [0mFuzzing test case #1 (3 total)...[0m
+[1;34m[*] [0mFuzzing test case #2 (3 total)...[0m
+[1;34m[*] [0mEntering queue cycle 3.[0m
+[1;34m[*] [0mFuzzing test case #0 (3 total)...[0m
+[1;34m[*] [0mFuzzing test case #1 (3 total)...[0m
+[?25h[1;31m
+
++++ Testing aborted by user +++
+[0m[1;32m[+] [0mWe're done here. Have a nice day!
+[0m

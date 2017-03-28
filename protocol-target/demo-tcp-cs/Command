@@ -1,0 +1,9 @@
+
+AFL-fuzz call "write_to_testcase_with_head()"
+make 
+sudo make install
+
+
+
+afl-fuzz -i afl-input -o afl-output -t 1000+ -m 2048 ./copy-server.out @@
+
