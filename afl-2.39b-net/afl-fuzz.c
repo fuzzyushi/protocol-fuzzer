@@ -3048,6 +3048,56 @@ static void write_to_testcase(void* mem, u32 len) {
 }
 
 
+/*Modification by Lingyu Situ*/
+
+static void write_to_testcase_with_head(void* mem, u32 len) {
+
+  s32 fd = out_fd;
+
+  if (out_file) {
+
+    unlink(out_file); /* Ignore errors. */
+
+    fd = open(out_file, O_WRONLY | O_CREAT | O_EXCL, 0600);
+
+    if (fd < 0) PFATAL("Unable to create '%s'", out_file);
+
+  } else lseek(fd, 0, SEEK_SET);
+
+/*............................................................................................. 
+      add a head padding before the testcase, and use the head to lead the program/protocol 
+      to progress into a certain state.
+  ...........................................................................................*/
+
+  u8 *final_buffer=NULL;
+  u8 *head="user\n";                               // add head="user \n"
+  u32 head_len=strlen(head);  
+  final_buffer=ck_alloc_nozero(head_len+len+1);
+  memcpy(final_buffer,head,head_len);
+  memcpy(final_buffer+head_len,mem,len);
+  final_buffer[head_len+len] = '\0';
+  ck_write(fd, final_buffer, len+head_len, out_file);
+  
+ 
+
+ //PFATAL("final buffer is %s, mem is %s", final_buffer, mem);
+
+  //printf("before ck_write\n");
+
+  //ck_write(fd, final_buffer, len+head_len, out_file);
+
+  //printf("after ck_write\n");
+
+  if (!out_file) {
+
+    if (ftruncate(fd, len)) PFATAL("ftruncate() failed");
+    lseek(fd, 0, SEEK_SET);
+
+  } else close(fd);
+
+}
+
+
 /* The same, but with an adjustable gap. Used for trimming. */
 
 static void write_with_gap(void* mem, u32 len, u32 skip_at, u32 skip_len) {
@@ -5109,6 +5159,15 @@ EXP_ST u8 common_fuzz_stuff(char** argv, u8* out_buf, u32 len) {
   }
 
   write_to_testcase(out_buf, len);
+  /*............................................................................................. 
+      add a head padding before the testcase, and use the head to lead the program/protocol 
+      to progress into a certain state.
+      write the testcase into a new file (e.g. testcase_with_leader.txt, and store it in computer, and update it every time.
+      the call fuzzer command trun to be "afl-fuzz -i input_dir -o output_dir ./app.out testcase_with_leader.txt"
+  ...............................................................................................*/
+  
+  // write_to_testcase_with_head(out_buf, len); //send a msg with added head 
+
 
   fault = run_target(argv);
 
