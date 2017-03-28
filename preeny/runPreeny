@@ -1,1 +1,1 @@
-ELOAD=/home/situlingyun/Documents/protocol-fuzzer/preeny/x86_64-linux-gnu/desock.so
+LD_PRELOAD=/home/situlingyun/Documents/protocol-fuzzer/preeny/x86_64-unknown-linux-gnu/desock.so
