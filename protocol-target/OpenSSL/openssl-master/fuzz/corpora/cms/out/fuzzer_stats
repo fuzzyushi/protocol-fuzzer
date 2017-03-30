@@ -1,0 +1,27 @@
+start_time        : 1490153942
+last_update       : 1490265019
+fuzzer_pid        : 145775
+cycles_done       : 6984
+execs_done        : 1803407631
+execs_per_sec     : 25122.65
+paths_total       : 604
+paths_favored     : 137
+paths_found       : 77
+paths_imported    : 0
+max_depth         : 5
+cur_path          : 172
+pending_favs      : 0
+pending_total     : 0
+variable_paths    : 1
+stability         : 99.88%
+bitmap_cvg        : 3.86%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1490200349
+last_crash        : 0
+last_hang         : 1490264999
+execs_since_crash : 1803407631
+exec_timeout      : 20
+afl_banner        : cms
+afl_version       : 2.39b
+command_line      : afl-fuzz -i corpora/cms/ -o corpora/cms/out ./cms
