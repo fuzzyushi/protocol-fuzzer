@@ -1,0 +1,300 @@
+.\" Man page generated from reStructuredText.
+.
+.TH "KNOTC" "8" "@RELEASE_DATE@" "@VERSION@" "Knot DNS"
+.SH NAME
+knotc \- Knot DNS control utility
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.SH SYNOPSIS
+.sp
+\fBknotc\fP [\fIparameters\fP] \fIaction\fP [\fIaction_args\fP]
+.SH DESCRIPTION
+.sp
+If no \fIaction\fP is specified, the program is executed in interactive mode.
+.SS Parameters
+.INDENT 0.0
+.TP
+\fB\-c\fP, \fB\-\-config\fP \fIfile\fP
+Use a textual configuration file (default is \fB@config_dir@/knot.conf\fP).
+.TP
+\fB\-C\fP, \fB\-\-confdb\fP \fIdirectory\fP
+Use a binary configuration database directory (default is \fB@storage_dir@/confdb\fP).
+The default configuration database, if exists, has a preference to the default
+configuration file.
+.TP
+\fB\-s\fP, \fB\-\-socket\fP \fIpath\fP
+Use a control UNIX socket path (default is \fB@run_dir@/knot.sock\fP).
+.TP
+\fB\-t\fP, \fB\-\-timeout\fP \fIseconds\fP
+Use a control timeout in seconds. Set 0 for infinity (default is 5).
+.TP
+\fB\-f\fP, \fB\-\-force\fP
+Forced operation. Overrides some checks.
+.TP
+\fB\-v\fP, \fB\-\-verbose\fP
+Enable debug output.
+.TP
+\fB\-h\fP, \fB\-\-help\fP
+Print the program help.
+.TP
+\fB\-V\fP, \fB\-\-version\fP
+Print the program version.
+.UNINDENT
+.SS Actions
+.INDENT 0.0
+.TP
+\fBstatus\fP [\fIdetail\fP]
+Check if the server is running.
+Moreover display either the running knotd version, numbers of worker threads,
+or Knot DNS buid (configure) summary, if the parameter is specified.
+.TP
+\fBstop\fP
+Stop the server if running.
+.TP
+\fBreload\fP
+Reload the server configuration and modified zone files. All open zone
+transactions will be aborted!
+.TP
+\fBstats\fP [\fImodule\fP[\fB\&.\fP\fIcounter\fP]]
+Show global statistics counter(s). To print also counters with value 0, use
+force option.
+.TP
+\fBzone\-check\fP [\fIzone\fP\&...]
+Test if the server can load the zone. Semantic checks are executed if enabled
+in the configuration. (*)
+.TP
+\fBzone\-memstats\fP [\fIzone\fP\&...]
+Estimate memory use for the zone. (*)
+.TP
+\fBzone\-status\fP [\fIzone\fP\&...]
+Show the zone status. (*)
+.TP
+\fBzone\-reload\fP [\fIzone\fP\&...]
+Trigger a zone reload from a disk without checking its modification time. For
+slave zone, the refresh from a master server is scheduled; for master zone,
+the notification of slave servers is scheduled. An open zone transaction
+will be aborted!
+.TP
+\fBzone\-refresh\fP [\fIzone\fP\&...]
+Trigger a check for the zone serial on the zone\(aqs master. If the master has a
+newer zone, a transfer is scheduled. This command is valid for slave zones.
+.TP
+\fBzone\-retransfer\fP [\fIzone\fP\&...]
+Trigger a zone transfer from the zone\(aqs master. The server doesn\(aqt check the
+serial of the master\(aqs zone. This command is valid for slave zones.
+.TP
+\fBzone\-flush\fP [\fIzone\fP\&...]
+Trigger a zone journal flush into the zone file.
+.TP
+\fBzone\-sign\fP [\fIzone\fP\&...]
+Trigger a DNSSEC re\-sign of the zone. Existing signatures will be dropped.
+This command is valid for zones with automatic DNSSEC signing.
+.TP
+\fBzone\-read\fP \fIzone\fP [\fIowner\fP [\fItype\fP]]
+Get zone data that are currently being presented.
+.TP
+\fBzone\-begin\fP \fIzone\fP\&...
+Begin a zone transaction.
+.TP
+\fBzone\-commit\fP \fIzone\fP\&...
+Commit the zone transaction. All changes are applied to the zone.
+.TP
+\fBzone\-abort\fP \fIzone\fP\&...
+Abort the zone transaction. All changes are discarded.
+.TP
+\fBzone\-diff\fP \fIzone\fP
+Get zone changes within the transaction.
+.TP
+\fBzone\-get\fP \fIzone\fP [\fIowner\fP [\fItype\fP]]
+Get zone data within the transaction.
+.TP
+\fBzone\-set\fP \fIzone\fP \fIowner\fP [\fIttl\fP] \fItype\fP \fIrdata\fP
+Add zone record within the transaction. The first record in a rrset
+requires a ttl value specified.
+.TP
+\fBzone\-unset\fP \fIzone\fP \fIowner\fP [\fItype\fP [\fIrdata\fP]]
+Remove zone data within the transaction.
+.TP
+\fBzone\-purge\fP \fIzone\fP\&...
+Purge zone data, file, journal, and timers.
+.TP
+\fBzone\-stats\fP \fIzone\fP [\fImodule\fP[\fB\&.\fP\fIcounter\fP]]
+Show zone statistics counter(s). To print also counters with value 0, use
+force option.
+.TP
+\fBconf\-init\fP
+Initialize the configuration database. (*)
+.TP
+\fBconf\-check\fP
+Check the server configuration. (*)
+.TP
+\fBconf\-import\fP \fIfilename\fP
+Import a configuration file into the configuration database. Ensure the
+server is not using the configuration database! (*)
+.TP
+\fBconf\-export\fP \fIfilename\fP
+Export the configuration database into a config file. (*)
+.TP
+\fBconf\-list\fP [\fIitem\fP]
+List the configuration database sections or section items.
+.TP
+\fBconf\-read\fP [\fIitem\fP]
+Read the item from the active configuration database.
+.TP
+\fBconf\-begin\fP
+Begin a writing configuration database transaction. Only one transaction
+can be opened at a time.
+.TP
+\fBconf\-commit\fP
+Commit the configuration database transaction.
+.TP
+\fBconf\-abort\fP
+Rollback the configuration database transaction.
+.TP
+\fBconf\-diff\fP [\fIitem\fP]
+Get the item difference in the transaction.
+.TP
+\fBconf\-get\fP [\fIitem\fP]
+Get the item data from the transaction.
+.TP
+\fBconf\-set\fP \fIitem\fP [\fIdata\fP\&...]
+Set the item data in the transaction.
+.TP
+\fBconf\-unset\fP [\fIitem\fP] [\fIdata\fP\&...]
+Unset the item data in the transaction.
+.UNINDENT
+.SS Note
+.sp
+Empty or \fB\-\-\fP \fIzone\fP parameter means all zones or all zones with a transaction.
+.sp
+Use \fB@\fP \fIowner\fP to denote the zone name.
+.sp
+Type \fIitem\fP parameter in the form of \fIsection\fP[\fB[\fP\fIid\fP\fB]\fP][\fB\&.\fP\fIname\fP].
+.sp
+The \fIdetail\fP option for \fBstatus\fP can be one of words: version, workers, configure.
+.sp
+(*) indicates a local operation which requires a configuration.
+.SS Interactive mode
+.sp
+The utility provides interactive mode with basic line editing functionality,
+command completion, and command history.
+.sp
+Interactive mode behavior can be customized in \fI~/.editrc\fP\&. Refer to
+\fBeditrc(5)\fP for details.
+.sp
+Command history is saved in \fI~/.knotc_history\fP\&.
+.SH EXAMPLES
+.SS Reload the whole server configuration
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ knotc reload
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Flush the example.com and example.org zones
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ knotc zone\-flush example.com example.org
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Get the current server configuration
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ knotc conf\-read server
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Get the list of the current zones
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ knotc conf\-read zone.domain
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Get the master remotes for the example.com zone
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ knotc conf\-read \(aqzone[example.com].master\(aq
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Add example.org zone with a zonefile location
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ knotc conf\-begin
+$ knotc conf\-set \(aqzone[example.org]\(aq
+$ knotc conf\-set \(aqzone[example.org].file\(aq \(aq/var/zones/example.org.zone\(aq
+$ knotc conf\-commit
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Get the SOA record for each configured zone
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ knotc zone\-read \-\- @ SOA
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH SEE ALSO
+.sp
+\fBknotd(8)\fP, \fBknot.conf(5)\fP, \fBeditrc(5)\fP\&.
+.SH AUTHOR
+CZ.NIC Labs <http://www.knot-dns.cz>
+.SH COPYRIGHT
+Copyright 2010–2017, CZ.NIC, z.s.p.o.
+.\" Generated by docutils manpage writer.
+.

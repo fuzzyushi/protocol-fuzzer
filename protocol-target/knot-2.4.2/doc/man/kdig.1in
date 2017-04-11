@@ -1,0 +1,321 @@
+.\" Man page generated from reStructuredText.
+.
+.TH "KDIG" "1" "@RELEASE_DATE@" "@VERSION@" "Knot DNS"
+.SH NAME
+kdig \- Advanced DNS lookup utility
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.SH SYNOPSIS
+.sp
+\fBkdig\fP [\fIcommon\-settings\fP] [\fIquery\fP [\fIsettings\fP]]...
+.sp
+\fBkdig\fP \fB\-h\fP
+.SH DESCRIPTION
+.sp
+This utility sends one or more DNS queries to a nameserver. Each query can have
+individual \fIsettings\fP, or it can be specified globally via \fIcommon\-settings\fP,
+which must precede \fIquery\fP specification.
+.SS Parameters
+.INDENT 0.0
+.TP
+\fIquery\fP
+\fIname\fP | \fB\-q\fP \fIname\fP | \fB\-x\fP \fIaddress\fP | \fB\-G\fP \fItapfile\fP
+.TP
+\fIcommon\-settings\fP, \fIsettings\fP
+[\fIclass\fP] [\fItype\fP] [\fB@\fP\fIserver\fP]... [\fIoptions\fP]
+.TP
+\fIname\fP
+Is a domain name that is to be looked up.
+.TP
+\fIserver\fP
+Is a domain name or an IPv4 or IPv6 address of the nameserver to send a query
+to. An additional port can be specified using address:port ([address]:port
+for IPv6 address), address@port, or address#port notation. If no server is
+specified, the servers from \fB/etc/resolv.conf\fP are used.
+.UNINDENT
+.sp
+If no arguments are provided, \fBkdig\fP sends NS query for the root
+zone.
+.SS Options
+.INDENT 0.0
+.TP
+\fB\-4\fP
+Use the IPv4 protocol only.
+.TP
+\fB\-6\fP
+Use the IPv6 protocol only.
+.TP
+\fB\-b\fP \fIaddress\fP
+Set the source IP address of the query to \fIaddress\fP\&. The address must be a
+valid address for local interface or :: or 0.0.0.0. An optional port
+can be specified in the same format as the \fIserver\fP value.
+.TP
+\fB\-c\fP \fIclass\fP
+Set the query class (e.g. CH, CLASS4). An explicit variant of \fIclass\fP
+specification. The default class is IN.
+.TP
+\fB\-d\fP
+Enable debug messages.
+.TP
+\fB\-h\fP, \fB\-\-help\fP
+Print the program help.
+.TP
+\fB\-k\fP \fIkeyfile\fP
+Use the TSIG key stored in a file \fIkeyfile\fP to authenticate the request. The
+file must contain the key in the same format as accepted by the
+\fB\-y\fP option.
+.TP
+\fB\-p\fP \fIport\fP
+Set the nameserver port number or service name to send a query to. The default
+port is 53.
+.TP
+\fB\-q\fP \fIname\fP
+Set the query name. An explicit variant of \fIname\fP specification.
+.TP
+\fB\-t\fP \fItype\fP
+Set the query type (e.g. NS, IXFR=12345, TYPE65535, NOTIFY). An explicit
+variant of \fItype\fP specification. The default type is A. IXFR type requires
+SOA serial parameter. NOTIFY type without SOA serial parameter causes pure
+NOTIFY message without any SOA hint.
+.TP
+\fB\-V\fP, \fB\-\-version\fP
+Print the program version.
+.TP
+\fB\-x\fP \fIaddress\fP
+Send a reverse (PTR) query for IPv4 or IPv6 \fIaddress\fP\&. The correct name, class
+and type is set automatically.
+.TP
+\fB\-y\fP [\fIalg\fP:]\fIname\fP:\fIkey\fP
+Use the TSIG key named \fIname\fP to authenticate the request. The \fIalg\fP
+part specifies the algorithm (the default is hmac\-md5) and \fIkey\fP specifies
+the shared secret encoded in Base64.
+.TP
+\fB\-E\fP \fItapfile\fP
+Export a dnstap trace of the query and response messages received to the
+file \fItapfile\fP\&.
+.TP
+\fB\-G\fP \fItapfile\fP
+Generate message output from a previously saved dnstap file \fItapfile\fP\&.
+.TP
+\fB+\fP[\fBno\fP]\fBmultiline\fP
+Wrap long records to more lines and improve human readability.
+.TP
+\fB+\fP[\fBno\fP]\fBshort\fP
+Show record data only.
+.TP
+\fB+\fP[\fBno\fP]\fBgeneric\fP
+Use the generic representation format when printing resource record types
+and data.
+.TP
+\fB+\fP[\fBno\fP]\fBaaflag\fP
+Set the AA flag.
+.TP
+\fB+\fP[\fBno\fP]\fBtcflag\fP
+Set the TC flag.
+.TP
+\fB+\fP[\fBno\fP]\fBrdflag\fP
+Set the RD flag.
+.TP
+\fB+\fP[\fBno\fP]\fBrecurse\fP
+Same as \fB+\fP[\fBno\fP]\fBrdflag\fP
+.TP
+\fB+\fP[\fBno\fP]\fBraflag\fP
+Set the RA flag.
+.TP
+\fB+\fP[\fBno\fP]\fBzflag\fP
+Set the zero flag bit.
+.TP
+\fB+\fP[\fBno\fP]\fBadflag\fP
+Set the AD flag.
+.TP
+\fB+\fP[\fBno\fP]\fBcdflag\fP
+Set the CD flag.
+.TP
+\fB+\fP[\fBno\fP]\fBdnssec\fP
+Set the DO flag.
+.TP
+\fB+\fP[\fBno\fP]\fBall\fP
+Show all packet sections.
+.TP
+\fB+\fP[\fBno\fP]\fBqr\fP
+Show the query packet.
+.TP
+\fB+\fP[\fBno\fP]\fBheader\fP
+Show the packet header.
+.TP
+\fB+\fP[\fBno\fP]\fBopt\fP
+Show the EDNS pseudosection.
+.TP
+\fB+\fP[\fBno\fP]\fBquestion\fP
+Show the question section.
+.TP
+\fB+\fP[\fBno\fP]\fBanswer\fP
+Show the answer section.
+.TP
+\fB+\fP[\fBno\fP]\fBauthority\fP
+Show the authority section.
+.TP
+\fB+\fP[\fBno\fP]\fBadditional\fP
+Show the additional section.
+.TP
+\fB+\fP[\fBno\fP]\fBtsig\fP
+Show the TSIG pseudosection.
+.TP
+\fB+\fP[\fBno\fP]\fBstats\fP
+Show trailing packet statistics.
+.TP
+\fB+\fP[\fBno\fP]\fBclass\fP
+Show the DNS class.
+.TP
+\fB+\fP[\fBno\fP]\fBttl\fP
+Show the TTL value.
+.TP
+\fB+\fP[\fBno\fP]\fBtcp\fP
+Use the TCP protocol (default is UDP for standard query and TCP for AXFR/IXFR).
+.TP
+\fB+\fP[\fBno\fP]\fBignore\fP
+Don\(aqt use TCP automatically if a truncated reply is received.
+.TP
+\fB+\fP[\fBno\fP]\fBtls\fP
+Use TLS with the Opportunistic privacy profile.
+.TP
+\fB+\fP[\fBno\fP]\fBtls\-ca\fP[=\fIFILE\fP]
+Use TLS with the Out\-Of\-Band privacy profile, use a specified PEM file
+(default is system certificate storage if no argument is provided).
+Can be specified multiple times.
+.TP
+\fB+\fP[\fBno\fP]\fBtls\-pin\fP=\fIBASE64\fP
+Use TLS with a pinned certificate check. The PIN must be a Base64 encoded
+SHA\-256 hash of the X.509 SubjectPublicKeyInfo. Can be specified multiple times.
+.TP
+\fB+\fP[\fBno\fP]\fBtls\-hostname\fP=\fISTR\fP
+Use TLS with a remote server hostname check.
+.TP
+\fB+\fP[\fBno\fP]\fBnsid\fP
+Request the nameserver identifier (NSID).
+.TP
+\fB+\fP[\fBno\fP]\fBbufsize\fP=\fIB\fP
+Set EDNS buffer size in bytes (default is 512 bytes).
+.TP
+\fB+\fP[\fBno\fP]\fBpadding\fP=\fIB\fP
+Set EDNS(0) padding option data length (default is no).
+.TP
+\fB+\fP[\fBno\fP]\fBalignment\fP[=\fIB\fP]
+Align the query to B\-byte\-block message using the EDNS(0) padding option
+(default is no or 128 if no argument is specified).
+.TP
+\fB+\fP[\fBno\fP]\fBsubnet\fP=\fISUBN\fP
+Set EDNS(0) client subnet SUBN=addr/prefix.
+.TP
+\fB+\fP[\fBno\fP]\fBedns\fP[=\fIN\fP]
+Use EDNS version (default is 0).
+.TP
+\fB+\fP[\fBno\fP]\fBtime\fP=\fIT\fP
+Set the wait\-for\-reply interval in seconds (default is 5 seconds). This timeout
+applies to each query attempt.
+.TP
+\fB+\fP[\fBno\fP]\fBretry\fP=\fIN\fP
+Set the number (>=0) of UDP retries (default is 2). This doesn\(aqt apply to
+AXFR/IXFR.
+.TP
+\fB+noidn\fP
+Disable the IDN transformation to ASCII and vice versa. IDNA2003 support depends
+on libidn availability during project building!
+.UNINDENT
+.SH NOTES
+.sp
+Options \fB\-k\fP and \fB\-y\fP can not be used simultaneously.
+.sp
+Dnssec\-keygen keyfile format is not supported. Use \fBkeymgr(8)\fP instead.
+.SH EXAMPLES
+.INDENT 0.0
+.IP 1. 3
+Get A records for example.com:
+.INDENT 3.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ kdig example.com A
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.IP 2. 3
+Perform AXFR for zone example.com from the server 192.0.2.1:
+.INDENT 3.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ kdig example.com \-t AXFR @192.0.2.1
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.IP 3. 3
+Get A records for example.com from 192.0.2.1 and reverse lookup for address
+2001:DB8::1 from 192.0.2.2. Both using the TCP protocol:
+.INDENT 3.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ kdig +tcp example.com \-t A @192.0.2.1 \-x 2001:DB8::1 @192.0.2.2
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.IP 4. 3
+Get SOA record for example.com, use TLS, use system certificates, check
+for specified hostname, check for certificate pin, and print additional
+debug info:
+.INDENT 3.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ kdig \-d @185.49.141.38 +tls\-ca +tls\-host=getdnsapi.net \e
+  +tls\-pin=foxZRnIh9gZpWnl+zEiKa0EJ2rdCGroMWm02gaxSc9S= soa example.com
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.SH FILES
+.sp
+\fB/etc/resolv.conf\fP
+.SH SEE ALSO
+.sp
+\fBkhost(1)\fP, \fBknsupdate(1)\fP, \fBkeymgr(8)\fP\&.
+.SH AUTHOR
+CZ.NIC Labs <http://www.knot-dns.cz>
+.SH COPYRIGHT
+Copyright 2010–2017, CZ.NIC, z.s.p.o.
+.\" Generated by docutils manpage writer.
+.
