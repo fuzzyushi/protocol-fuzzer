@@ -1,3 +1,0 @@
-@set UPDATED 02 June 2016
-@set EDITION 4.3.93
-@set VERSION 4.3.93

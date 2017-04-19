@@ -1,0 +1,14 @@
+recvbuff.c:15:test_Initialization:PASS
+recvbuff.c:23:test_GetAndFree:PASS
+recvbuff.c:34:test_GetAndFill:PASS
+
+-----------------------
+3 Tests: 
+3 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-recvbuff (exit status: 0)

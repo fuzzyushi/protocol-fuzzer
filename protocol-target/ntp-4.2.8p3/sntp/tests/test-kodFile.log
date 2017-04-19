@@ -1,0 +1,37 @@
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/kod-test-empty
+kodFile.c:29:test_ReadEmptyFile:PASS
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/kod-test-correct
+kodFile.c:35:test_ReadCorrectFile:PASS
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/kod-test-blanks
+kodFile.c:53:test_ReadFileWithBlankLines:PASS
+kodFile.c:76:test_WriteEmptyFile:PASS
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/kod-expected-single
+kodFile.c:92:test_WriteFileWithSingleEntry:PASS
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/kod-expected-multiple
+kodFile.c:116:test_WriteFileWithMultipleEntries:PASS
+
+-----------------------
+6 Tests: 
+6 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-kodFile (exit status: 0)

@@ -1,0 +1,45 @@
+#!/bin/sh
+
+case `hostname` in
+ $BKD_HOST)
+    my_version=$BKD_VERSION
+    ;;
+ $BK_HOST)
+    my_version=$BK_VERSION
+    ;;
+esac
+
+(
+    case "$my_version" in
+     bk-3*)
+	bk sccscat BitKeeper/etc/config
+	;;
+     bk-4*)
+	bk annotate -R BitKeeper/etc/config
+	;;
+     bk-5*)
+	bk annotate -R BitKeeper/etc/config
+	;;
+     bk-6*)
+	bk annotate -R BitKeeper/etc/config
+	;;
+     *) exit 2
+	;;
+    esac
+) | grep -i '^lic' | grep BKL > /dev/null
+
+case $? in
+ 0) cat <<EOF
+BitKeeper/etc/config contains license keys in its history.
+
+As such, it cannot be used to *supply* ChangeSets to other repositories.
+
+This can be fixed; please contact stenn@ntp.org for more information.
+EOF
+    ;;
+ 2) echo "BKD_VERSION is <$BKD_VERSION>!"
+    ;;
+ *) ;;
+esac
+
+exit 0

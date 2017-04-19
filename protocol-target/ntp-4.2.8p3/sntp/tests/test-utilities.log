@@ -1,0 +1,30 @@
+utilities.c:68:test_IPv4Address:PASS
+utilities.c:78:test_IPv6Address:PASS
+utilities.c:98:test_SetLiVnMode1:PASS
+utilities.c:111:test_SetLiVnMode2:PASS
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/debug-input-pkt
+utilities.c:126:test_PktOutput:PASS
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/debug-input-lfp-bin
+utilities.c:146:test_LfpOutputBinaryFormat:PASS
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/debug-input-lfp-dec
+utilities.c:162:test_LfpOutputDecimalFormat:PASS
+
+-----------------------
+7 Tests: 
+7 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-utilities (exit status: 0)

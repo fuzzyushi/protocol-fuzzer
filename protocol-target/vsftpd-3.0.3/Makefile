@@ -1,5 +1,5 @@
 # Makefile for systems with GNU tools
-CC 	=	afl-gcc
+CC 	=	afl-clang-fast
 INSTALL	=	install
 IFLAGS  = -idirafter dummyinc
 #CFLAGS = -g

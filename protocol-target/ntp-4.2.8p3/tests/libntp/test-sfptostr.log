@@ -1,0 +1,19 @@
+sfptostr.c:11:test_PositiveInteger:PASS
+sfptostr.c:19:test_NegativeInteger:PASS
+sfptostr.c:27:test_PositiveIntegerPositiveFraction:PASS
+sfptostr.c:35:test_NegativeIntegerNegativeFraction:PASS
+sfptostr.c:43:test_PositiveIntegerNegativeFraction:PASS
+sfptostr.c:51:test_NegativeIntegerPositiveFraction:PASS
+sfptostr.c:59:test_SingleDecimalInteger:PASS
+sfptostr.c:67:test_SingleDecimalRounding:PASS
+
+-----------------------
+8 Tests: 
+8 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-sfptostr (exit status: 0)

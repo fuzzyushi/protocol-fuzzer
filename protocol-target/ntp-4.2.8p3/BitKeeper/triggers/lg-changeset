@@ -1,0 +1,15 @@
+#! /bin/sh
+
+# Last Good Changeset
+
+LGC=`bk -R prs -hr+ -nd:I: ChangeSet`
+
+case "$LGC" in
+ [0-9]*.*)
+    ;;
+ *) echo "$0: Unexpected  value for LGC <$LGC>"
+    exit 1
+    ;;
+esac
+
+echo $LGC > ${bkp}BitKeeper/triggers/.lgc

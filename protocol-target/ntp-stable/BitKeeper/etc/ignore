@@ -1,0 +1,169 @@
+
+*.VC.db
+*.vcproj.*.user
+*.vcxproj.user
+*/autom4te.cache -prune
+*/include/version.def
+*/include/version.texi
+*/m4/libtool.m4
+*/m4/ltoptions.m4
+*/m4/ltsugar.m4
+*/m4/ltversion.m4
+*/m4/lt~obsolete.m4
+*~
+./.buildkey-*
+./.flockbuild-*
+./A.* -prune
+BitKeeper/deleted/ -prune
+BitKeeper/etc/csets-in
+BitKeeper/etc/csets-out
+BitKeeper/etc/level
+BitKeeper/log -prune
+BitKeeper/readers -prune
+BitKeeper/tmp -prune
+BitKeeper/triggers/.lgc
+BitKeeper/triggers/p*--*
+BitKeeper/triggers/post-commit
+BitKeeper/triggers/post-incoming
+BitKeeper/triggers/post-outgoing
+BitKeeper/triggers/pre-apply
+BitKeeper/triggers/pre-commit
+BitKeeper/triggers/pre-incoming
+BitKeeper/triggers/pre-outgoing
+BitKeeper/triggers/pre-resolve
+BitKeeper/triggers/trigger.t1
+BitKeeper/triggers/trigger.t2
+BitKeeper/triggers/trigger.touch
+BitKeeper/writer -prune
+COPYRIGHT
+CommitLog
+ElectricFence/Makefile.in
+Makefile.in
+PENDING -prune
+acinclude.m4
+aclocal.m4
+adjtimed/Makefile.in
+am.log
+ansi2knr.1
+ansi2knr.c
+autom4te.cache -prune
+br-flock
+builderrors.txt
+clockstuff/Makefile.in
+cmd_args.diff
+config.cache-*
+config.h
+config.h.in
+config.log
+config.status
+configure
+configure.in.$$$
+cscope.files
+cscope.in.out
+cscope.out
+cscope.po.out
+firefly.sh
+html-new -prune
+html/man -prune
+html/pic/thumbs.db
+html/thumbs.db
+include/Makefile.in
+include/isc/Makefile.am.$$$
+include/isc/netaddr.h.$$$
+include/ntp.patch
+include/ntp_control.patch
+include/ntp_request.patch
+install-sh
+jedi.sh
+kernel/Makefile.in
+kernel/sys/Makefile.in
+libntp/Makefile.am.$$$
+libntp/Makefile.in
+libntp/net.c.bak
+libparse/Makefile.in
+librsaref/*.h
+librsaref/Makefile.in
+mkinstalldirs
+ntp_io.diff
+ntpd/Copy of ntp_io.csave
+ntpd/Makefile.in
+ntpd/atom.bak
+ntpd/atom.c
+ntpd/crypto.bak
+ntpd/crypto.c
+ntpd/loop.bak
+ntpd/loop.c
+ntpd/ntp_control.patch
+ntpd/ntp_crypto.c.1
+ntpd/ntp_io.c.$$$
+ntpd/ntp_io.cold
+ntpd/ntp_io.csave
+ntpd/ntp_peer.patch
+ntpd/ntp_proto.c.1
+ntpd/ntp_proto.c.2
+ntpd/ntp_proto.patch
+ntpd/ntp_request.patch
+ntpd/peer.bak
+ntpd/peer.c
+ntpd/precision
+ntpd/proto.bak
+ntpd/proto.c
+ntpdate/Makefile.in
+ntpdc/Makefile.in
+ntpq/Makefile.in
+ntpq/ntpq.patch
+ntptrace/Makefile.in
+parseutil/Makefile.in
+ports/winnt/*.ncb
+ports/winnt/*.opt
+ports/winnt/*/*.plg
+ports/winnt/*/*.sdf
+ports/winnt/*/*.suo
+ports/winnt/*/.version
+ports/winnt/*/Debug -prune
+ports/winnt/*/Release -prune
+ports/winnt/*/Win32-out -prune
+ports/winnt/*/Win32-tmp -prune
+ports/winnt/*/version.c
+ports/winnt/*/x64-out -prune
+ports/winnt/*/x64-tmp -prune
+ports/winnt/bin -prune
+ports/winnt/libntp/*.bin
+ports/winnt/libntp/libntp.dsp.$$$
+ports/winnt/libntp/messages.aps
+ports/winnt/libntp/messages.h
+ports/winnt/libntp/messages.rc
+ports/winnt/ntp-keygen/ntpkeygen.dsp.$$$
+ports/winnt/ntpd/nt_clockstuff.c.bak
+ports/winnt/ntpd/ntpd.dsp.$$$
+ports/winnt/ntpd/stderr
+ports/winnt/ntpdate/ntpdate.dsp.$$$
+ports/winnt/ntpdc/ntpdc.dsp.$$$
+ports/winnt/ntpq/ntpq.dsp.$$$
+ports/winnt/vs2015/*.opendb
+ports/winnt/vs2015/ntpd/*.vcxproj*
+rsaref2
+scripts/Makefile.in
+sntp/autogen-version.def
+sntp/bincheck.mf
+sntp/depsver.mf
+sntp/libevent/.git -prune
+sntp/libevent/build-aux/ar-lib
+sntp/libevent/build-aux/compile
+sntp/libevent/build-aux/config.guess
+sntp/libevent/build-aux/config.sub
+sntp/libevent/build-aux/depcomp
+sntp/libevent/build-aux/ltmain.sh
+sntp/libevent/build-aux/missing
+sntp/libevent/build-aux/ylwrap
+sntp/libevent/test/regress.gen.c
+sntp/libevent/test/regress.gen.h
+sntp/scm-rev
+sntp/version.def
+sntp/version.texi
+stamp-h.in
+test.kod
+tests/sandbox/Makefile.in
+util/Makefile.in
+version
+version.m4

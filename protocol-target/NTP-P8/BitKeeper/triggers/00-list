@@ -1,0 +1,9 @@
+pre-commit
+post-commit
+pre-delta
+pre-incoming
+pre-resolve
+pre-apply
+post-incoming
+pre-outgoing
+post-outgoing

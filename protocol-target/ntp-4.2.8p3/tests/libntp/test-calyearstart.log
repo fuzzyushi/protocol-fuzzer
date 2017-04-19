@@ -1,0 +1,14 @@
+calyearstart.c:22:test_NoWrapInDateRange:PASS
+calyearstart.c:30:test_NoWrapInDateRangeLeapYear:PASS
+calyearstart.c:38:test_WrapInDateRange:PASS
+
+-----------------------
+3 Tests: 
+3 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-calyearstart (exit status: 0)

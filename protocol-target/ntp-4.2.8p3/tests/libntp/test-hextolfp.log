@@ -1,0 +1,17 @@
+hextolfp.c:10:test_PositiveInteger:PASS
+hextolfp.c:20:test_NegativeInteger:PASS
+hextolfp.c:30:test_PositiveFraction:PASS
+hextolfp.c:40:test_NegativeFraction:PASS
+hextolfp.c:50:test_IllegalNumberOfInteger:PASS
+hextolfp.c:57:test_IllegalChar:PASS
+
+-----------------------
+6 Tests: 
+6 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-hextolfp (exit status: 0)

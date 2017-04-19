@@ -1,0 +1,193 @@
+@situlingyun 1491967997.597486   1.135 bk-7.3.1ce:   obtain write lock (104066)
+@situlingyun 1491967997.598504   1.136 bk-7.3.1ce:   sfio -i -g -j3 --mark-no-dfiles --checkout -N3179 -Pntp-stable/
+@situlingyun 1491967999.051519   2.589 bk-7.3.1ce:     sfio -iq --Nway --checkout
+@situlingyun 1491967999.052011   2.590 bk-7.3.1ce:     sfio -iq --Nway --checkout
+@situlingyun 1491967999.052412   2.590 bk-7.3.1ce:     sfio -iq --Nway --checkout
+@situlingyun 1491968006.471752  10.009 bk-7.3.1ce:       checkout -Tq --skip-bam -
+@situlingyun 1491968006.472314  10.010 bk-7.3.1ce:       checkout -Tq --skip-bam -
+@situlingyun 1491968007.938619  11.476 bk-7.3.1ce:       checkout -Tq --skip-bam -
+@situlingyun 1491968061.847801  65.385 bk-7.3.1ce:       checkout -Tq --skip-bam - = 0
+@situlingyun 1491968061.848438  65.386 bk-7.3.1ce:     sfio -iq --Nway --checkout = 0
+@situlingyun 1491968061.848817  65.386 bk-7.3.1ce:       checkout -Tq --skip-bam - = 0
+@situlingyun 1491968061.849421  65.387 bk-7.3.1ce:     sfio -iq --Nway --checkout = 0
+@situlingyun 1491968061.849768  65.387 bk-7.3.1ce:       checkout -Tq --skip-bam - = 0
+@situlingyun 1491968061.850380  65.388 bk-7.3.1ce:     sfio -iq --Nway --checkout = 0
+@situlingyun 1491968061.850763  65.388 bk-7.3.1ce:   sfio -i -g -j3 --mark-no-dfiles --checkout -N3179 -Pntp-stable/ = 0
+@situlingyun 1491968061.852018  65.390 bk-7.3.1ce:   parent -sq http://bk1.ntp.org/ntp-stable
+@situlingyun 1491968061.852177  65.390 bk-7.3.1ce:   parent -sq http://bk1.ntp.org/ntp-stable = 0
+@situlingyun 1491968061.891231  65.429 bk-7.3.1ce:   write unlock (104066)
+@situlingyun 1491968061.891278  65.429 bk-7.3.1ce:   downgrade write lock (104066)
+@situlingyun 1491968061.891927  65.429 bk-7.3.1ce:   get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers
+@situlingyun 1491968061.892226  65.430 bk-7.3.1ce:   get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers = 0
+@situlingyun 1491968061.892886  65.430 bk-7.3.1ce:   Running trigger /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers/post-incoming.license-warn
+@situlingyun 1491968061.926519  65.464 bk-7.3.1ce:   Trigger /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers/post-incoming.license-warn returns 0
+@situlingyun 1491968061.926584  65.464 bk-7.3.1ce:   read unlock (104066)
+@situlingyun 1491968061.926641  65.464 bk-7.3.1ce: clone http://bk1.ntp.org/ntp-stable/ = 0 rmts=20170111234837-05:00|www.ntp.org|/srv/bk/srv/bk/repos/ntp-stable+|stenn|pdH/
+@situlingyun 1491968203.007194   0.000 bk-7.3.1ce: help topics
+@situlingyun 1491968203.029115   0.022 bk-7.3.1ce:   gethelp topics /usr/local/bitkeeper
+@situlingyun 1491968203.050400   0.043 bk-7.3.1ce:   gethelp topics /usr/local/bitkeeper = 0
+@situlingyun 1491968203.050764   0.043 bk-7.3.1ce: help topics = 0
+@situlingyun 1491968205.662127   0.000 bk-7.3.1ce: tags
+@situlingyun 1491968205.668250   0.006 bk-7.3.1ce:   root .
+@situlingyun 1491968205.668280   0.006 bk-7.3.1ce:   root . = 0
+@situlingyun 1491968205.669133   0.007 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config
+@situlingyun 1491968205.669189   0.007 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491968205.669985   0.007 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config
+@situlingyun 1491968205.670105   0.008 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491968205.670933   0.008 bk-7.3.1ce:   changes -t
+@situlingyun 1491968216.606165  10.944 bk-7.3.1ce:   changes -t = 0
+@situlingyun 1491968216.606520  10.944 bk-7.3.1ce: tags = 0
+@situlingyun 1491968251.406618   0.000 bk-7.3.1ce: clone -rNTP_4_2_8P8 . ../ntp_p8
+@situlingyun 1491968251.407246   0.001 bk-7.3.1ce:   bkd
+@situlingyun 1491968251.407958   0.001 bk-7.3.1ce:         obtain read lock (123498)
+@situlingyun 1491968251.407969   0.001 bk-7.3.1ce:         "remote clone" -z0 -rNTP_4_2_8P8 -l
+@situlingyun 1491968251.411486   0.005 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers
+@situlingyun 1491968251.411593   0.005 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers = 0
+@situlingyun 1491968251.412246   0.006 bk-7.3.1ce:         sfio --clone -oq -L -m --parents
+@situlingyun 1491968251.412672   0.006 bk-7.3.1ce:           _sfiles_clone -L -m2 -p
+@situlingyun 1491968251.743803   0.337 bk-7.3.1ce:           _sfiles_clone -L -m2 -p = 0
+@situlingyun 1491968251.744793   0.338 bk-7.3.1ce:         sfio --clone -oq -L -m --parents = 0
+@situlingyun 1491968251.747139   0.341 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers
+@situlingyun 1491968251.747244   0.341 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers = 0
+@situlingyun 1491968251.747467   0.341 bk-7.3.1ce:       "remote clone" -z0 -rNTP_4_2_8P8 -l = 0 xfered=782454
+@situlingyun 1491968251.801700   0.395 bk-7.3.1ce:       read unlock (123498)
+@situlingyun 1491968304.903917   0.000 bk-7.3.1ce: clone -rNTP_4_2_8P3 . ../ntp_p3
+@situlingyun 1491968304.904698   0.001 bk-7.3.1ce:   bkd
+@situlingyun 1491968304.905709   0.002 bk-7.3.1ce:         obtain read lock (125115)
+@situlingyun 1491968304.905722   0.002 bk-7.3.1ce:         "remote clone" -z0 -rNTP_4_2_8P3 -l
+@situlingyun 1491968304.910030   0.007 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers
+@situlingyun 1491968304.910172   0.007 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers = 0
+@situlingyun 1491968304.911092   0.008 bk-7.3.1ce:         sfio --clone -oq -L -m --parents
+@situlingyun 1491968304.911726   0.008 bk-7.3.1ce:           _sfiles_clone -L -m2 -p
+@situlingyun 1491968304.925335   0.022 bk-7.3.1ce:           _sfiles_clone -L -m2 -p = 0
+@situlingyun 1491968304.944563   0.041 bk-7.3.1ce:         sfio --clone -oq -L -m --parents = 0
+@situlingyun 1491968304.945514   0.042 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers
+@situlingyun 1491968304.945622   0.042 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers = 0
+@situlingyun 1491968304.945888   0.042 bk-7.3.1ce:       "remote clone" -z0 -rNTP_4_2_8P3 -l = 0 xfered=782454
+@situlingyun 1491968305.070979   0.167 bk-7.3.1ce:       read unlock (125115)
+@situlingyun 1491968311.103368   0.000 bk-7.3.1ce: tags
+@situlingyun 1491968311.109864   0.006 bk-7.3.1ce:   root .
+@situlingyun 1491968311.109900   0.006 bk-7.3.1ce:   root . = 0
+@situlingyun 1491968311.110986   0.007 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config
+@situlingyun 1491968311.111037   0.008 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491968311.111948   0.008 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config
+@situlingyun 1491968311.112097   0.009 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491968311.113174   0.010 bk-7.3.1ce:   changes -t
+@situlingyun 1491968313.439613   2.336 bk-7.3.1ce:   changes -t = 0
+@situlingyun 1491968313.440003   2.337 bk-7.3.1ce: tags = 0
+@situlingyun 1491987004.338122   0.000 bk-7.3.1ce: tags
+@situlingyun 1491987004.344649   0.006 bk-7.3.1ce:   root .
+@situlingyun 1491987004.344686   0.006 bk-7.3.1ce:   root . = 0
+@situlingyun 1491987004.345765   0.007 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config
+@situlingyun 1491987004.345815   0.007 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491987004.346687   0.008 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config
+@situlingyun 1491987004.346826   0.008 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491987004.347723   0.009 bk-7.3.1ce:   changes -t
+@situlingyun 1491987032.299919  27.961 bk-7.3.1ce:   changes -t = 0
+@situlingyun 1491987032.300301  27.962 bk-7.3.1ce: tags = 0
+@situlingyun 1491987888.346169   0.000 bk-7.3.1ce: tags
+@situlingyun 1491987888.351870   0.005 bk-7.3.1ce:   root .
+@situlingyun 1491987888.351899   0.005 bk-7.3.1ce:   root . = 0
+@situlingyun 1491987888.352698   0.006 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config
+@situlingyun 1491987888.352738   0.006 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491987888.353398   0.007 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config
+@situlingyun 1491987888.353510   0.007 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491987888.354227   0.008 bk-7.3.1ce:   changes -t
+@situlingyun 1491987893.207394   4.861 bk-7.3.1ce:   changes -t = 0
+@situlingyun 1491987893.207687   4.861 bk-7.3.1ce: tags = 0
+@situlingyun 1491987924.994045   0.000 bk-7.3.1ce: clone -rNTP_4_2_8_p3 . ../ntp-4.2.8p3
+@situlingyun 1491987924.994604   0.000 bk-7.3.1ce:   bkd
+@situlingyun 1491987924.995284   0.001 bk-7.3.1ce:         obtain read lock (9366)
+@situlingyun 1491987924.995294   0.001 bk-7.3.1ce:         "remote clone" -z0 -rNTP_4_2_8_p3 -l
+@situlingyun 1491987924.998512   0.004 bk-7.3.1ce:       "remote clone" -z0 -rNTP_4_2_8_p3 -l = 1 xfered=0
+@situlingyun 1491987924.998539   0.004 bk-7.3.1ce:       read unlock (9366)
+@situlingyun 1491987924.998683   0.004 bk-7.3.1ce: clone -rNTP_4_2_8_p3 . ../ntp-4.2.8p3 = 1 rmts=20170412113317+08:00|stly.(none)|/home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable|situlingyun|oyas
+@situlingyun 1491987934.870436   0.000 bk-7.3.1ce: clone -rNTP_4_2_8_P3 . ../ntp-4.2.8p3
+@situlingyun 1491987934.870987   0.000 bk-7.3.1ce:   bkd
+@situlingyun 1491987934.871649   0.001 bk-7.3.1ce:         obtain read lock (9395)
+@situlingyun 1491987934.871659   0.001 bk-7.3.1ce:         "remote clone" -z0 -rNTP_4_2_8_P3 -l
+@situlingyun 1491987934.874847   0.004 bk-7.3.1ce:       "remote clone" -z0 -rNTP_4_2_8_P3 -l = 1 xfered=0
+@situlingyun 1491987934.874873   0.004 bk-7.3.1ce:       read unlock (9395)
+@situlingyun 1491987934.875021   0.005 bk-7.3.1ce: clone -rNTP_4_2_8_P3 . ../ntp-4.2.8p3 = 1 rmts=20170412113317+08:00|stly.(none)|/home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable|situlingyun|oyas
+@situlingyun 1491987951.030421   0.000 bk-7.3.1ce: clone -rNTP_4_2_8P3 . ../ntp-4.2.8p3
+@situlingyun 1491987951.031092   0.001 bk-7.3.1ce:   bkd
+@situlingyun 1491987951.031859   0.001 bk-7.3.1ce:         obtain read lock (9408)
+@situlingyun 1491987951.031878   0.001 bk-7.3.1ce:         "remote clone" -z0 -rNTP_4_2_8P3 -l
+@situlingyun 1491987951.035804   0.005 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers
+@situlingyun 1491987951.035921   0.005 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers = 0
+@situlingyun 1491987951.036689   0.006 bk-7.3.1ce:         sfio --clone -oq -L -m --parents
+@situlingyun 1491987951.037210   0.007 bk-7.3.1ce:           _sfiles_clone -L -m2 -p
+@situlingyun 1491987951.147649   0.117 bk-7.3.1ce:           _sfiles_clone -L -m2 -p = 0
+@situlingyun 1491987951.149555   0.119 bk-7.3.1ce:         sfio --clone -oq -L -m --parents = 0
+@situlingyun 1491987951.150456   0.120 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers
+@situlingyun 1491987951.150586   0.120 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers = 0
+@situlingyun 1491987951.150830   0.120 bk-7.3.1ce:       "remote clone" -z0 -rNTP_4_2_8P3 -l = 0 xfered=782454
+@situlingyun 1491987951.229915   0.199 bk-7.3.1ce:       read unlock (9408)
+@situlingyun 1491997961.359035   0.000 bk-7.3.1ce: tags
+@situlingyun 1491997961.365573   0.006 bk-7.3.1ce:   root .
+@situlingyun 1491997961.365609   0.006 bk-7.3.1ce:   root . = 0
+@situlingyun 1491997961.366701   0.007 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config
+@situlingyun 1491997961.366750   0.007 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491997961.367660   0.008 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config
+@situlingyun 1491997961.367816   0.008 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491997961.368788   0.009 bk-7.3.1ce:   changes -t
+@situlingyun 1491997979.190050  17.831 bk-7.3.1ce:   changes -t = 0
+@situlingyun 1491997979.190463  17.831 bk-7.3.1ce: tags = 0
+@situlingyun 1491998018.693380   0.000 bk-7.3.1ce: clone rNTP_4_2_8P8 ../NTP_4.2.8P8
+@situlingyun 1491998018.694176   0.001 bk-7.3.1ce:   bkd
+@situlingyun 1491998018.695101   0.002 bk-7.3.1ce:   bkd = 1
+@situlingyun 1491998018.695208   0.002 bk-7.3.1ce: clone rNTP_4_2_8P8 ../NTP_4.2.8P8 = 6
+@situlingyun 1491998031.773073   0.000 bk-7.3.1ce: help topics
+@situlingyun 1491998031.773854   0.000 bk-7.3.1ce:   gethelp topics /usr/local/bitkeeper
+@situlingyun 1491998031.773930   0.000 bk-7.3.1ce:   gethelp topics /usr/local/bitkeeper = 0
+@situlingyun 1491998031.774272   0.001 bk-7.3.1ce: help topics = 0
+@situlingyun 1491998091.642353   0.000 bk-7.3.1ce: help topics
+@situlingyun 1491998091.643252   0.001 bk-7.3.1ce:   gethelp topics /usr/local/bitkeeper
+@situlingyun 1491998091.643338   0.001 bk-7.3.1ce:   gethelp topics /usr/local/bitkeeper = 0
+@situlingyun 1491998091.643774   0.001 bk-7.3.1ce: help topics = 0
+@situlingyun 1491998107.791879   0.000 bk-7.3.1ce: clone rNTP_4_2_8P8
+@situlingyun 1491998107.792633   0.001 bk-7.3.1ce:   bkd
+@situlingyun 1491998107.793512   0.002 bk-7.3.1ce:   bkd = 1
+@situlingyun 1491998107.793617   0.002 bk-7.3.1ce: clone rNTP_4_2_8P8 = 6
+@situlingyun 1491998185.165331   0.000 bk-7.3.1ce: tags
+@situlingyun 1491998185.171926   0.006 bk-7.3.1ce:   root .
+@situlingyun 1491998185.171966   0.006 bk-7.3.1ce:   root . = 0
+@situlingyun 1491998185.173094   0.008 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config
+@situlingyun 1491998185.173144   0.008 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491998185.174114   0.009 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config
+@situlingyun 1491998185.174258   0.009 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491998185.175122   0.010 bk-7.3.1ce:   changes -t
+@situlingyun 1491998189.178649   4.013 bk-7.3.1ce:   changes -t = 0
+@situlingyun 1491998189.179009   4.014 bk-7.3.1ce: tags = 0
+@situlingyun 1491998213.465469   0.000 bk-7.3.1ce: tags
+@situlingyun 1491998213.471893   0.006 bk-7.3.1ce:   root .
+@situlingyun 1491998213.471935   0.006 bk-7.3.1ce:   root . = 0
+@situlingyun 1491998213.472993   0.007 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config
+@situlingyun 1491998213.473042   0.008 bk-7.3.1ce:   _test -f BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491998213.473948   0.008 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config
+@situlingyun 1491998213.474092   0.009 bk-7.3.1ce:   prs "-hd " -r+ BitKeeper/etc/SCCS/s.config = 0
+@situlingyun 1491998213.475013   0.010 bk-7.3.1ce:   changes -t
+@situlingyun 1491998215.180310   1.715 bk-7.3.1ce:   changes -t = 0
+@situlingyun 1491998215.180750   1.715 bk-7.3.1ce: tags = 0
+@situlingyun 1491998267.432294   0.000 bk-7.3.1ce: clone rNTP_4_2_8P8
+@situlingyun 1491998267.433086   0.001 bk-7.3.1ce:   bkd
+@situlingyun 1491998267.433979   0.001 bk-7.3.1ce:   bkd = 1
+@situlingyun 1491998267.434098   0.002 bk-7.3.1ce: clone rNTP_4_2_8P8 = 6
+@situlingyun 1491998359.039690   0.000 bk-7.3.1ce: clone rNTP_4_2_8P8 . ../NTP-P8
+@situlingyun 1491998359.040388   0.001 bk-7.3.1ce:   gethelp -s clone
+@situlingyun 1491998359.051175   0.012 bk-7.3.1ce:   gethelp -s clone = 0
+@situlingyun 1491998359.051462   0.012 bk-7.3.1ce: clone rNTP_4_2_8P8 . ../NTP-P8 = 3 exit=utils.c:2061
+@situlingyun 1491998368.877536   0.000 bk-7.3.1ce: clone -rNTP_4_2_8P8 . ../NTP-P8
+@situlingyun 1491998368.878287   0.001 bk-7.3.1ce:   bkd
+@situlingyun 1491998368.879146   0.002 bk-7.3.1ce:         obtain read lock (27620)
+@situlingyun 1491998368.879158   0.002 bk-7.3.1ce:         "remote clone" -z0 -rNTP_4_2_8P8 -l
+@situlingyun 1491998368.883391   0.006 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers
+@situlingyun 1491998368.883518   0.006 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers = 0
+@situlingyun 1491998368.884467   0.007 bk-7.3.1ce:         sfio --clone -oq -L -m --parents
+@situlingyun 1491998368.885035   0.008 bk-7.3.1ce:           _sfiles_clone -L -m2 -p
+@situlingyun 1491998368.896883   0.019 bk-7.3.1ce:           _sfiles_clone -L -m2 -p = 0
+@situlingyun 1491998368.912347   0.035 bk-7.3.1ce:         sfio --clone -oq -L -m --parents = 0
+@situlingyun 1491998368.913239   0.036 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers
+@situlingyun 1491998368.913348   0.036 bk-7.3.1ce:         get -Sq /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-stable/BitKeeper/triggers = 0
+@situlingyun 1491998368.913614   0.036 bk-7.3.1ce:       "remote clone" -z0 -rNTP_4_2_8P8 -l = 0 xfered=782454
+@situlingyun 1491998369.066811   0.189 bk-7.3.1ce:       read unlock (27620)

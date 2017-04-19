@@ -1,0 +1,103 @@
+#!/bin/sh
+
+# Copyright 2001, Harlan Stenn
+
+# triggerd: trigger driver
+
+TS=`date '+%Y%m%d %T'`
+
+echo "${TS}: firing <$0> for BK EVENT <$BK_EVENT> BK_TRIGGER <$BK_TRIGGER>" >> BitKeeper/log/trigger
+echo "- in <`pwd`>" >> BitKeeper/log/trigger
+
+# if:
+# - we are in post-commit or post-apply, and
+# - there are any changes to the triggers/ subdir
+# then:
+# - run "make -f trigger.mk" (note that pmake isn't SCCS-aware)
+# fi
+case "$BK_TRIGGER" in
+ post-commit|post-apply)
+    test `bk sfiles BitKeeper/triggers | wc -l` -gt 0 && {
+	echo "${TS}: Running trigger.mk" >> BitKeeper/log/trigger
+	( cd BitKeeper/triggers && make -f trigger.mk )
+    }
+    ;;
+ *)
+    ;;
+esac
+
+# Process trigger.cfg
+
+echo "Updating triggers:" > /tmp/foo.bk
+
+# Lose old triggers
+rm -f BitKeeper/triggers/*--*
+
+n=0
+
+bk cat BitKeeper/triggers/trigger.cfg | ( while read tags scripts
+do
+    echo "Processing tag <$tags> and scripts <$scripts>" >> /tmp/foo.bk
+    case "$tags" in
+     \#*|'')
+	continue
+	;;
+     \*)
+	tags="post-commit post-incoming post-outgoing pre-apply pre-commit pre-incoming pre-outgoing pre-resolve"
+	;;
+     post-commit)
+	;;
+     post-incoming)
+	;;
+     post-outgoing)
+	;;
+     pre-apply)
+	;;
+     pre-commit)
+	;;
+     pre-incoming)
+	;;
+     pre-outgoing)
+	;;
+     pre-resolve)
+	;;
+     *)
+	echo "${TS}: Unknown trigger class <$tags>" >> /tmp/foo.bk ; continue }
+	;;
+    esac
+
+    for tag in $tags
+    do
+	for script in $scripts .
+	do
+	    case "$script" in
+	     .) continue ;;
+	    esac
+	    echo "Install script $script For tag $tag" >> /tmp/foo.bk
+	    # We may not need the SF stuff if we use triggert
+	    SF=BitKeeper/triggers/${script}
+	    if test -f $SF || bk get $SF
+	    then
+		:
+	    else
+		echo "${TS}: could not install <$SF>" >> /tmp/foo.bk
+		continue
+	    fi
+
+	    N=`printf %03d $n || awk -v n=$n 'BEGIN { printf "%03d\n",n ; exit }'`
+	    
+	    case "$N" in
+	     [0-9][0-9][0-9]) ;;
+	     *) echo "${TS}: n <$n> expanded bogusly to <$N>" >> /tmp/foo.bk
+		# exit nonzero?
+		;;
+	    esac
+	    TF=BitKeeper/triggers/${tag}--${N}$script
+	    bk cat BitKeeper/triggers/triggert | sed -e "s/@BN@/$script/" > $TF
+	    chmod +x $TF
+	    echo "Installed triggert as <$TF>" >> /tmp/foo.bk
+	    n=`expr $n + 1`
+	done
+    done
+done
+)

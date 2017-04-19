@@ -1,0 +1,18 @@
+strtolfp.c:11:test_PositiveInteger:PASS
+strtolfp.c:25:test_NegativeInteger:PASS
+strtolfp.c:42:test_PositiveFraction:PASS
+strtolfp.c:56:test_NegativeFraction:PASS
+strtolfp.c:73:test_PositiveMsFraction:PASS
+strtolfp.c:89:test_NegativeMsFraction:PASS
+strtolfp.c:107:test_InvalidChars:PASS
+
+-----------------------
+7 Tests: 
+7 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-strtolfp (exit status: 0)

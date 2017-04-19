@@ -1,0 +1,20 @@
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+configure: error: source directory already configured; run "make distclean" there first
+/bin/bash ./config.status --recheck
+running CONFIG_SHELL=/bin/bash /bin/bash ../configure CC=clang CXX=clang++ --no-create --no-recursion
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+configure: error: source directory already configured; run "make distclean" there first
+Makefile:623: recipe for target 'config.status' failed
+make: *** [config.status] Error 1

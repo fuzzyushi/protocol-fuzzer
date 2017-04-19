@@ -1456,7 +1456,6 @@ static void read_testcases(void) {
            "    directory.\n");
 
     PFATAL("Unable to open '%s'", in_dir);
-
   }
 
   if (shuffle_queue && nl_cnt > 1) {

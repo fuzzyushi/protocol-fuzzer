@@ -1,0 +1,17 @@
+socktoa.c:11:test_IPv4AddressWithPort:PASS
+socktoa.c:18:test_IPv6AddressWithPort:PASS
+socktoa.c:42:test_ScopedIPv6AddressWithPort:PASS
+socktoa.c:67:test_HashEqual:PASS
+socktoa.c:75:test_HashNotEqual:PASS
+socktoa.c:88:test_IgnoreIPv6Fields:PASS
+
+-----------------------
+6 Tests: 
+6 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-socktoa (exit status: 0)

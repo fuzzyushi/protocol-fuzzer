@@ -1,0 +1,22 @@
+lfptostr.c:23:test_PositiveInteger:PASS
+lfptostr.c:30:test_NegativeInteger:PASS
+lfptostr.c:37:test_PositiveIntegerWithFraction:PASS
+lfptostr.c:44:test_NegativeIntegerWithFraction:PASS
+lfptostr.c:51:test_RoundingDownToInteger:PASS
+lfptostr.c:58:test_RoundingMiddleToInteger:PASS
+lfptostr.c:65:test_RoundingUpToInteger:PASS
+lfptostr.c:72:test_SingleDecimal:PASS
+lfptostr.c:79:test_MillisecondsRoundingUp:PASS
+lfptostr.c:88:test_MillisecondsRoundingDown:PASS
+lfptostr.c:97:test_UnsignedInteger:PASS
+
+-----------------------
+11 Tests: 
+11 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-lfptostr (exit status: 0)

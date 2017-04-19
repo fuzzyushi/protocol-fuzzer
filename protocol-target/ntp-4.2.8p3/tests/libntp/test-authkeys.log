@@ -1,0 +1,17 @@
+authkeys.c:71:test_AddTrustedKeys:PASS
+authkeys.c:82:test_AddUntrustedKey:PASS
+authkeys.c:90:test_HaveKeyCorrect:PASS
+authkeys.c:99:test_HaveKeyIncorrect:PASS
+authkeys.c:106:test_AddWithAuthUseKey:PASS
+authkeys.c:113:test_EmptyKey:PASS
+
+-----------------------
+6 Tests: 
+6 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-authkeys (exit status: 0)

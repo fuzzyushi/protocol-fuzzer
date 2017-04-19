@@ -1,0 +1,66 @@
+#! /bin/sh
+
+HOST=`bk gethost`
+case "$HOST" in
+ deacon.udel.edu) ;;
+ whimsy.udel.edu) ;;
+ *) exit 0 ;;
+esac
+
+echo "Starting send trigger"
+
+case `hostname` in
+ $BKD_HOST)
+    my_version=$BKD_VERSION
+    CSETS=csets-in
+    ;;
+ $BK_HOST)
+    my_version=$BK_VERSION
+    CSETS=csets-out
+    ;;
+esac
+
+#echo "BK_STATUS is <$BK_STATUS>"
+if [ X$BK_STATUS = XDRYRUN -o X$BK_STATUS = XNOTHING ]
+then
+    exit 0
+fi
+
+case "$BK_SIDE" in
+ server)
+    U=$BKD_USER
+    H=$BKD_HOST
+    R=$BKD_ROOT
+    ;;
+ client)
+    U=$BK_USER
+    H=$BK_HOST
+    R=$BK_ROOT
+    ;;
+ *) echo "BK_SIDE is <$BK_SIDE>!"
+    exit 0
+    ;;
+esac
+
+REPO=`basename $R`
+
+case "$REPO" in
+ RESYNC)
+    exit 0
+    ;;
+esac
+
+case "$my_version" in
+ bk-4*|bk-5*|bk-6*|bk-7*)
+    bk changes -vv -m - < BitKeeper/etc/${CSETS} \
+	| mail -s "BitKeeper diffs" bk-${REPO}-send@ntp.org
+    ;;
+ *) echo "<$my_version> is not bk-4*, bk-5*, bk-6* or bk-7*!"
+    ;;
+esac
+
+# bk send -d -q bk-${REPO}-send@ntp.org
+
+echo "Leaving send trigger"
+
+exit 0

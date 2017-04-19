@@ -1,0 +1,54 @@
+#! /bin/sh
+
+# HMS: disable for now
+exit 0
+
+HOST=`bk gethost`
+case "$HOST" in
+ deacon.udel.edu) ;;
+ whimsy.udel.edu) ;;
+ *) exit 0 ;;
+esac
+
+echo "Starting 2mirrors trigger"
+
+#echo "BK_STATUS is <$BK_STATUS>"
+if [ X$BK_STATUS = XDRYRUN -o X$BK_STATUS = XNOTHING ]
+then
+    exit 0
+fi
+
+case "$BK_SIDE" in
+ server)
+    U=$BKD_USER
+    H=$BKD_HOST
+    R=$BKD_ROOT
+    ;;
+ client)
+    U=$BK_USER
+    H=$BK_HOST
+    R=$BK_ROOT
+    ;;
+ *) echo "BK_SIDE is <$BK_SIDE>!"
+    exit 0
+    ;;
+esac
+
+REPO=`basename $R`
+
+case "$REPO" in
+ RESYNC)
+    exit 0
+    ;;
+esac
+
+# HMS: 120226: bkbits is offline
+#bk push -q bk://ntp@ntp.bkserver.com/$REPO
+bk push -q bk1.ntp.org:/home/bk/$REPO		# maccarony
+# HMS: bk2 logins work now, no need to use psp2.
+bk push -q bk2.ntp.org:/hog0/bk/$REPO
+#bk push -q psp2.ntp.org:/hog/jails/bk2.ntp.org/hog0/bk/$REPO
+
+echo "Leaving 2mirrors trigger"
+
+exit 0

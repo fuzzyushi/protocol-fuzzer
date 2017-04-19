@@ -1,0 +1,51 @@
+#!/bin/sh
+
+case `hostname` in
+ $BKD_HOST)
+    my_version=$BKD_VERSION
+    ;;
+ $BK_HOST)
+    my_version=$BK_VERSION
+    ;;
+esac
+
+# we're in the RESYNC directory
+if [ -f BitKeeper/etc/SCCS/s.config ] ; then
+	(
+	    case "$my_version" in
+	     bk-3*)
+		bk sccscat BitKeeper/etc/config
+		;;
+	     bk-4*)
+		bk annotate -R BitKeeper/etc/config
+		;;
+	     bk-5*)
+		bk annotate -R BitKeeper/etc/config
+		;;
+	     bk-6*)
+		bk annotate -R BitKeeper/etc/config
+		;;
+	     *) exit 2
+		;;
+	    esac
+	) | grep -i '^lic' | grep BKL > /dev/null
+	case "$?" in
+	 0) cat <<EOF
+You are trying to put license keys in a public repository.
+
+Please use the BK_CONFIG environment variable or put your license keys
+in the /etc/BitKeeper/config directory of the machine you are using.
+
+Contact support@bitmover.com if you need help.
+
+Refusing to commit license keys to a public repository. Sorry.
+EOF
+	    exit 1
+	    ;;
+	 2) echo "my_version is <$my_version>!"
+	    exit 1
+	    ;;
+	esac
+fi
+
+exit 0

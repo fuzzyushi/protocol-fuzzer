@@ -1,0 +1,39 @@
+timespecops.c:155:test_Helpers1:PASS
+timespecops.c:175:test_Normalise:PASS
+timespecops.c:189:test_SignNoFrac:PASS
+timespecops.c:201:test_SignWithFrac:PASS
+timespecops.c:215:test_CmpFracEQ:PASS
+timespecops.c:228:test_CmpFracGT:PASS
+timespecops.c:241:test_CmpFracLT:PASS
+timespecops.c:258:test_AddFullNorm:PASS
+timespecops.c:272:test_AddFullOflow1:PASS
+timespecops.c:286:test_AddNsecNorm:PASS
+timespecops.c:298:test_AddNsecOflow1:PASS
+timespecops.c:314:test_SubFullNorm:PASS
+timespecops.c:328:test_SubFullOflow:PASS
+timespecops.c:342:test_SubNsecNorm:PASS
+timespecops.c:354:test_SubNsecOflow:PASS
+timespecops.c:370:test_Neg:PASS
+timespecops.c:387:test_AbsNoFrac:PASS
+timespecops.c:398:test_AbsWithFrac:PASS
+timespecops.c:413:test_Helpers2:PASS
+timespecops.c:445:test_ToLFPbittest:PASS
+timespecops.c:458:test_ToLFPrelPos:PASS
+timespecops.c:470:test_ToLFPrelNeg:PASS
+timespecops.c:482:test_ToLFPabs:PASS
+timespecops.c:497:test_FromLFPbittest:PASS
+timespecops.c:516:test_FromLFPrelPos:PASS
+timespecops.c:529:test_FromLFPrelNeg:PASS
+timespecops.c:544:test_LFProundtrip:PASS
+timespecops.c:563:test_ToString:PASS
+
+-----------------------
+28 Tests: 
+28 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-timespecops (exit status: 0)

@@ -1,0 +1,83 @@
+#! /bin/sh
+
+
+# This is running in the RESYNC tree, we're looking for any new
+# triggers and/or changes to triggers.
+# Done after the resolve stage because they could be sneaky and create
+# the file in an earlier changeset and then move it.
+
+# If you want to apply a changeset that would be blocked by this trigger
+# set the BYPASS_PARANOID envariable to 1 before running "bk resolve"
+
+# Edit the next line...
+MAILTO=stenn@ntp.org
+
+case "$BYPASS_PARANOID" in
+ 1) exit 0
+    ;;
+esac
+
+RUN_HERE=0
+RESYNC_DIR=`(pawd || pwd) 2>/dev/null | sed 1q`-XX
+BASE_RESYNC_DIR=`basename $RESYNC_DIR`
+
+HOST=`bk gethost`
+case "$HOST" in
+ deacon.udel.edu)
+    RUN_HERE=1
+    ;;
+ whimsy.udel.edu)
+    RUN_HERE=1
+    ;;
+esac
+
+case "$RUN_HERE" in
+ 1)
+    # So far, this has always been "client".
+    case "$BK_SIDE" in
+     server)
+	U=$BKD_USER
+	H=$BKD_HOST
+	R=$BKD_ROOT
+	;;
+     client)
+	U=$BK_USER
+	H=$BK_HOST
+	R=$BK_ROOT
+	;;
+     *) echo "Unexpected value for BK_SIDE: <$BK_SIDE>"
+	exit 3
+	;;
+    esac
+
+    test `bk sfiles BitKeeper/triggers | wc -l` -gt 0 && {
+	echo Changes delayed until they are reviewed
+	mail -s 'Review the triggers' $MAILTO << EOM
+A ChangeSet in:
+
+	$RESYNC_DIR
+
+contains a change for a trigger.  Please review this changeset by:
+
+ % cd $RESYNC_DIR
+ % bk csets
+ % cd ..
+
+and if you like what you see, make sure there is no RESYNC/ subdir and:
+
+ % mv $BASE_RESYNC_DIR RESYNC
+ % env BYPASS_PARANOID=1 bk resolve
+
+---The environment is:
+`env`
+---
+EOM
+	exit 3
+	}
+    ;;
+ *)
+    echo "bypassing $BK_TRIGGER on $HOST"
+    ;;
+esac
+
+exit 0

@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Copyright 2001,2008,2010 Harlan Stenn
+
+# triggert: trigger target
+
+ME=$0
+BN=@BN@
+TS=`date '+%Y%m%d %T'`
+WD=`pwd`
+
+# The following worked until bk 4.5:
+#case "$ME" in
+# */../*) bkp=../ ;;
+# ../*) bkp=../ ;;
+# *)   bkp=""  ;;
+#esac
+##
+
+case "$WD" in
+ */RESYNC) bkp=../ ;;
+ *)	   bkp=""  ;;
+esac
+
+# We export bkp because $BN might want to use it.
+export bkp
+
+#echo "${TS}: firing <$ME> to call <$BN> from <$WD>"
+echo "${TS}: firing <$ME> to call <$BN> from <$WD>" >> ${bkp}BitKeeper/log/trigger
+
+test -f ${bkp}BitKeeper/triggers/${BN} || bk get ${bkp}BitKeeper/triggers/${BN}
+exec ${bkp}BitKeeper/triggers/${BN}

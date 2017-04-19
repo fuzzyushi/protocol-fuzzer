@@ -1,0 +1,17 @@
+decodenetnum.c:9:test_IPv4AddressOnly:PASS
+decodenetnum.c:22:test_IPv4AddressWithPort:PASS
+decodenetnum.c:35:test_IPv6AddressOnly:PASS
+decodenetnum.c:55:test_IPv6AddressWithPort:PASS
+decodenetnum.c:75:test_IllegalAddress:PASS
+decodenetnum.c:82:test_IllegalCharInPort:PASS
+
+-----------------------
+6 Tests: 
+6 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-decodenetnum (exit status: 0)

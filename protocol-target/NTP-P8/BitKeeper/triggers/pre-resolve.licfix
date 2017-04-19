@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# we're in the RESYNC directory as part of a resolve
+
+#### Test #1 : is there a license in the config file history
+# RESYNC/BitKeeper/etc/SCCS/s.config will exist only if one of the two
+# repos involved has a delta to BitKeeper/etc/config that the other
+# repo lacks.
+test -f BitKeeper/etc/SCCS/s.config && \
+    bk annotate -R BitKeeper/etc/config | grep -i '^lic' | grep -q BKL && {
+	cat <<EOF
+You are trying to put license keys in a public repository.
+
+Please use the BK_CONFIG environment variable or put your license keys
+in the /etc/BitKeeper/config directory of the machine you are using.
+
+Contact support@bitmover.com if you need help.
+
+Refusing to commit license keys to a public repository. Sorry.
+EOF
+	exit 1
+}
+
+#### Test #2 : is there a key which signals a mis-fixed repo
+key='443c523cHD7rXV0MATJ98107R6DICg'
+bk changes -r"$key" -d' ' > /dev/null 2>&1 && {
+	cat <<EOF
+You are trying to pull either from a bad repository or into a bad repository.
+
+Contact Harlan Stenn <stenn@ntp.org> if you need help.
+EOF
+	exit 1
+}
+
+exit 0

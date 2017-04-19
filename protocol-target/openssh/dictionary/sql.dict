@@ -1,0 +1,45 @@
+sftp situlingyun@localhost
+
+
+
+living019958
+
+
+
+cd /etc/test
+cd PATH
+
+ls
+dir
+mkdir directory
+rmdir directory
+pwd
+chgrp groupname PATH
+chown username PATH
+chmod 644 PATH
+
+ln oldname newname
+rm PATH
+rename oldname newname
+exit 
+bye 
+quit
+
+
+
+
+lcd PATH
+lls
+lmkdir
+lpwd
+
+put ldir rdir
+put dir
+
+get rdir ldir
+get rdor
+
+
+get *
+get *.rpm
+

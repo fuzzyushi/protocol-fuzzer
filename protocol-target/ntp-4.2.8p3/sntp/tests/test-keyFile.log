@@ -1,0 +1,36 @@
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/key-test-empty
+keyFile.c:53:test_ReadEmptyKeyFile:PASS
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/key-test-ascii
+keyFile.c:61:test_ReadASCIIKeys:PASS
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/key-test-hex
+keyFile.c:79:test_ReadHexKeys:PASS
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/key-test-comments
+keyFile.c:105:test_ReadKeyFileWithComments:PASS
+Current working dir: /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests
+builddir is   <.>
+abs_srcdir is </home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests>
+PATH IS : /home/situlingyun/Documents/protocol-fuzzer/protocol-target/ntp-4.2.8p3/sntp/tests/data/key-test-invalid-hex
+keyFile.c:124:test_ReadKeyFileWithInvalidHex:PASS
+
+-----------------------
+5 Tests: 
+5 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-keyFile (exit status: 0)

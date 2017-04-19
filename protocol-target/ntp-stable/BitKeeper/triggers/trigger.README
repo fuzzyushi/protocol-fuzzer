@@ -1,0 +1,59 @@
+changelog		A trigger I use
+commitlogs		A trigger I use
+delta-changelog		A trigger I no longer use (needs more work)
+lg-changeset		A trigger I no longer use (needs more work)
+notify			A trigger I use close to one y'all wrote
+paranoid		A trigger I use close to one y'all wrote
+
+trigger.cfg		The trigger config file.  The user edits this file.
+trigger.mk		Needs to be run by an SCCS-aware "make"
+triggerd		The main trigger driver
+triggert		The trigger targets
+
+---
+Check in the 4 trigger* files above, and any triggers you want to run.
+
+Add the triggers you want run in the order you want them run to trigger.cfg
+
+To get the ball rolling, run "gmake -f trigger.mk".
+
+From then on, everything should be handled automatically.
+
+To subsequently turn off these triggers:
+
+ % rm post-commit post-incoming p*--*
+
+---
+
+I'd like to find solutions to:
+
+- lose hardcoded email addresses
+- lose hardcoded machine names
+- I'm not really sure about some of my assumtions about what/where/when
+
+Basically, the .mk file installs triggert to call triggerd as post-commit
+and post-apply to make sure trigger changes get caught.
+
+triggert simply calls either triggerd or the user-specified trigger script.
+
+triggerd re-installs/updates the triggers/ dir if it sees any new trigger
+stuff in a changeset.  It does this from post-commit and post-apply.  I hope
+those are the right places.
+
+triggerd then reads trigger.cfg and installs the identified scripts in order.
+
+In my case:
+
+ *		notify
+ pre-apply	paranoid
+ post-commit	delta-changelog lg-changeset
+ post-incoming	delta-changelog lg-changeset
+ post-commit	2mirrors
+ post-incoming	2mirrors
+
+The "notify" trigger is run in all cases, first.
+Next, if we're in pre-apply the "paranoid" trigger will fire.
+Next, we'll run the delta-changelog script in either post-{commit,incoming}
+Next, we'll run the lg-changset script in either post-{commit,incoming}
+Finally, in either post-commit or post-incoming, the 2mirrors trigger will
+fire.

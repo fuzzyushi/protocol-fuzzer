@@ -108,8 +108,8 @@ AuthorizedKeysFile	.ssh/authorized_keys
 #Banner none
 
 # override default of no subsystems
-Subsystem	sftp	/usr/libexec/sftp-server
-
+#Subsystem	sftp	/usr/lib/sftp-server
+Subsystem       sftp    /home/situlingyun/Documents/protocol-fuzzer/protocol-target/openssh/sftp-server
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
 #	X11Forwarding no

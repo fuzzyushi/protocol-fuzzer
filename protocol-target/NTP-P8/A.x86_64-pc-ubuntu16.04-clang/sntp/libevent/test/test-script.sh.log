@@ -1,0 +1,22 @@
+Running tests:
+EPOLL (timerfd)
+Skipping test
+EPOLL (changelist)
+Skipping test
+EPOLL (timerfd+changelist)
+Skipping test
+EVPORT 
+Skipping test
+KQUEUE 
+Skipping test
+EPOLL 
+Skipping test
+DEVPOLL 
+Skipping test
+POLL 
+Skipping test
+SELECT 
+Skipping test
+WIN32 
+Skipping test
+PASS test/test-script.sh (exit status: 0)

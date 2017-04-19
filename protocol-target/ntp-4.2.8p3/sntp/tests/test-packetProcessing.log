@@ -1,0 +1,31 @@
+packetProcessing.c:83:test_TooShortLength:PASS
+packetProcessing.c:92:test_LengthNotMultipleOfFour:PASS
+packetProcessing.c:101:test_TooShortExtensionFieldLength:PASS
+packetProcessing.c:117:test_UnauthenticatedPacketReject:PASS
+Crypto NAK = 0x00000000
+packetProcessing.c:131:test_CryptoNAKPacketReject:PASS
+packetProcessing.c:143:test_AuthenticatedPacketInvalid:PASS
+unrecognized key ID = 0x00000032
+packetProcessing.c:166:test_AuthenticatedPacketUnknownKey:PASS
+packetProcessing.c:186:test_ServerVersionTooOld:PASS
+packetProcessing.c:201:test_ServerVersionTooNew:PASS
+packetProcessing.c:216:test_NonWantedMode:PASS
+packetProcessing.c:231:test_KoDRate:PASS
+packetProcessing.c:242:test_KoDDeny:PASS
+packetProcessing.c:253:test_RejectUnsyncedServer:PASS
+packetProcessing.c:265:test_RejectWrongResponseServerMode:PASS
+packetProcessing.c:282:test_AcceptNoSentPacketBroadcastMode:PASS
+packetProcessing.c:294:test_CorrectUnauthenticatedPacket:PASS
+packetProcessing.c:302:test_CorrectAuthenticatedPacketMD5:PASS
+packetProcessing.c:322:test_CorrectAuthenticatedPacketSHA1:PASS
+
+-----------------------
+18 Tests: 
+18 PASS 
+0 XFAIL 
+0 Failures 
+0 XPASS 
+0 Ignored 
+
+OK
+PASS test-packetProcessing (exit status: 0)
