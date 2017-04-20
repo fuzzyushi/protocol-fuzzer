@@ -62,6 +62,11 @@
 #include <arpa/inet.h>
 #include <sys/sendfile.h>
 
+#include <jansson.h>  //Lingyun: add jason library
+//#include <json/json.h>
+//#include "jsoncpp/json/json.h"
+
+
 #if defined(__APPLE__) || defined(__FreeBSD__) || defined (__OpenBSD__)
 #  include <sys/sysctl.h>
 #endif /* __APPLE__ || __FreeBSD__ || __OpenBSD__ */
@@ -82,6 +87,9 @@
 #  define EXP_ST static
 #endif /* ^AFL_LIB */
 
+
+
+
 /* Lots of globals, but mostly for the status UI and other things where it
    really makes no sense to haul them around as function parameters. */
 
@@ -95,7 +103,8 @@ EXP_ST u8 *in_dir,                    /* Input directory with test cases  */
           *in_bitmap,                 /* Input bitmap                     */
           *doc_path,                  /* Path to documentation dir        */
           *target_path,               /* Path to target binary            */
-          *orig_cmdline;              /* Original command line            */
+          *orig_cmdline,              /* Original command line            */
+          *json_file;                 /* Json file path                   */
 
 EXP_ST u32 exec_tmout = EXEC_TIMEOUT; /* Configurable exec timeout (ms)   */
 EXP_ST u64 mem_limit = MEM_LIMIT;     /* Memory cap for child (MB)        */
@@ -244,6 +253,10 @@ static s32 N_fd;                      /* for network file descriptor      */
 static u32 N_timeout_given = 0;       /* use delay before network I/O     */
 static u32 N_exec_tmout = 0;          /* network I/O delay in msec        */
 static struct timespec N_it;          /* structure for nanosleep() call   */
+
+static u32 G_option_specified=0;      /* 1 if a -G option is present      */ 
+static u8* G_option_string = 0;       /* points to copy of -G option str  */
+static u32 G_slen = 0;                /* length of the -G option string   */
 
 
 struct queue_entry {
@@ -8286,7 +8299,7 @@ int main(int argc, char** argv) {
   gettimeofday(&tv, &tz);
   srandom(tv.tv_sec ^ tv.tv_usec ^ getpid());
 
-  while ((opt = getopt(argc, argv, "+i:o:f:m:t:T:dnCB:S:M:x:QN:D:L")) > 0)
+  while ((opt = getopt(argc, argv, "+i:o:f:m:t:T:dnCB:S:M:x:QN:D:G:L")) > 0)
 
     switch (opt) {
 
@@ -8494,9 +8507,59 @@ int main(int argc, char** argv) {
         N_fuzz_client = 1;
         break;
 
+      case 'G':
+        /* -G{grammar-path} : provide protocol message grammar 
+         *
+         * The grammar-path has the form "/PATH/file.json
+         *
+         * for the moment, make a copy of the -G option string and
+         * indicate that the -G option has been specified
+         *
+         */
+
+        if (G_option_specified) FATAL("multiple -G options not allowed");
+        G_slen = strlen(optarg);
+        if (G_slen > 0) {
+          G_option_string = (u8*)ck_alloc(G_slen+1);
+          strcpy(G_option_string,optarg);
+          //FATAL("value of G_option_string: %s\n",G_option_string);  
+          json_file=optarg;
+          G_option_specified = 1;
+        } else {
+          FATAL("-G: missing argument");
+        }
+        break;
+
+
       default:
 
         usage(argv[0]);
+
+    }
+
+
+  /* check for correctness of -G option and load json file into map*/
+    if(G_option_specified){
+
+        char *json_text = "{name:joys of programming}"; 
+        json_t *root;
+        json_error_t error;
+      //json_text=request(json_file);
+
+    //  if(!json_text)
+     //   FATAL("Invalid json file after -G");  
+
+        root = json_loads(json_text,0,&error);
+    //  ck_free(json_text);
+
+        if(!root)
+          FATAL("error: on line %d: %s\n",error.line,error.text);
+
+        print_json_aux(root,0);  
+
+
+     
+
 
     }
 

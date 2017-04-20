@@ -342,4 +342,6 @@
 
 // #define IGNORE_FINDS
 
+//Json::Value initializeConfigure(std::string config);
+
 #endif /* ! _HAVE_CONFIG_H */
